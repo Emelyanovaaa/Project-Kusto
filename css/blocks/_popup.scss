@@ -1,5 +1,5 @@
 
-.overlay {
+.popup {
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -14,12 +14,12 @@
     justify-content: center;
 }
 
-.overlay.is-hidden {
+.popup.is-hidden {
     visibility: hidden;
     opacity: 0;
 }
 
-.overlay__content {
+.popup__content {
     width: 430px;
     background: #FFFFFF;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
@@ -32,13 +32,13 @@
     position: relative;
 }
 
-.overlay__profile-forms {
+.popup__profile-forms {
     display: flex;
     flex-direction: column;
     /*width: 240px;*/
 }
 
-.overlay__title {
+.popup__title {
     font-weight: 900;
     font-size: 24px;
     line-height: 29px;
@@ -52,7 +52,7 @@
     margin-bottom: 54px;
 }*/
 
-.overlay__form-name {
+.popup__form-name {
     margin-bottom: 30px;
     border-top: none;
     border-right: none;
@@ -62,14 +62,14 @@
     padding-bottom: 10px;
 }
 
-.overlay__form-name::placeholder {
+.popup__form-name::placeholder {
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
     color: #000000;
 }
 
-.overlay__form-description {
+.popup__form-description {
     border-top: none;
     border-right: none;
     border-left: none;
@@ -78,41 +78,41 @@
     padding-bottom: 10px;
 }
 
-.overlay__form-description::placeholder {
+.popup__form-description::placeholder {
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
     color: #000000;
 }
 
-.overlay__form-description {
+.popup__form-description {
     margin-bottom: 48px;
 }
 
-.overlay__form-btn {
+.popup__form-btn {
     padding: 15px;
     background-color: #000000;
     color: #ffffff;
     font-size: 18px;
 }
 
-.overlay__form-btn:hover {
+.popup__form-btn:hover {
     opacity: 0.6;
     cursor: pointer;
 }
 
-.overlay__cancel-icon {
+.popup__cancel-icon {
     position: absolute;
     top: -40px;
     right: -33px;
 }
 
-.overlay__cancel-btn {
+.popup__cancel-btn {
     border: none;
     background-color: rgba(0, 0, 0, 0.0);
 }
 
-.overlay__cancel-btn:hover {
+.popup__cancel-btn:hover {
     opacity: 0.6;
     cursor: pointer
 }
@@ -124,17 +124,17 @@
 
 
 @media (max-width: 640px) {
-    .overlay__content {
+    .popup__content {
         width: auto;
         height: 322px;
     }
 
-    .overlay__title {
+    .popup__title {
         font-size: 18px;
         line-height: 22px;
     }
 
-    .overlay__form-btn {
+    .popup__form-btn {
         font-size: 14px;
         line-height: 17px;
     }
@@ -143,14 +143,14 @@
         font-size: 30px;
     }
 
-    .overlay__cancel-icon {
+    .popup__cancel-icon {
         top: -34px;
         right: -1px;
     }
 }
 
 @media (max-width: 375px) {
-    .overlay__content {
+    .popup__content {
         padding: 34px 26px;
     }
 }
