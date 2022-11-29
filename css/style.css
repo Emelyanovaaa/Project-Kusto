@@ -15,7 +15,6 @@ body {
 .wrap {
     max-width: 880px;
     margin: 0 auto;
-    /*border: 1px solid red;*/
 }
 
 @media (max-width: 940px) {
@@ -40,11 +39,11 @@ body {
     margin-bottom: 40px;
 }
 
-.logo {
+.header__logo {
     border-bottom: 1px solid #545454;
 }
 
-.logo_header {
+.logo-img {
     padding-top: 45px;
     padding-bottom: 40px;
 }
@@ -52,64 +51,76 @@ body {
 /*Секция Profile*/
 
 @media (max-width: 940px) {
-    .profile_wrap {
+    .profile__content {
         flex-direction: column;
         align-items: center;
     }
 
-    .profile_info {
+    .profile__info {
         flex-direction: column;
         align-items: center;
     }
 
-    .profile_info_discription {
+    .profile__info-discription {
         display: flex;
         justify-content: center;
     }
 
-    .profile_info_name {
+    .profile__info-name {
         margin-bottom: 36px;
     }
 
-    .profil_info_name_row {
+    .profile__info-name_row {
         margin-bottom: 14px;
     }
 
-    .prof_info_name_text {
+    .profil__name-text {
         font-size: 40px;
     }
 
-    .prof_info_discrip_text {
+    .profile__discription-text {
         font-size: 16px;
     }
 
-    .profile_info_edit {
+    .profile__info-edit {
         top: 14px;
     }
 }
 
 @media (max_width: 450px) {
 
-    .prof_info_name_text {
+    .profil__name-text {
         font-size: 27px;
     }
 
-    .profil_info_name_row {
+    .profile__info-name_row {
         margin-bottom: 0px;
     }
 
-    .profile_info_name {
+    .profile__info-name {
         margin-bottom: 30px;
     }
 
-    .btn_edit_icon {
+    .profil__edit-icon {
         width: 20px;
         height: 20px;
     }
 
-    .profile_info_edit {
+    .profile__info-edit {
         top: 15px
-        /*right: -33px;*/
+    }
+}
+
+@media (max-width: 375px) {
+
+    .profil__name-text {
+        font-size: 27px;
+        line-height: 33px;
+    }
+
+    .profile__info-edit {
+        top: 6px;
+        right: -37px;
     }
 }
 
@@ -117,17 +128,17 @@ body {
     margin-bottom: 50px;
 }
 
-.profile_wrap {
+.profile__content {
     display: flex;
     justify-content: space-between;
 }
 
-.profile_info {
+.profile__info {
     display: flex;
     gap: 30px;
 }
 
-.profile_info_text {
+.profile__info-text {
     display: flex;
     flex-direction: row;
     gap: 17px;
@@ -136,89 +147,89 @@ body {
     justify-content: center;
 }
 
-.profile_add_info {
+.profile__add-info {
     display: flex;
     align-items: center;
 }
 
-.profil_info_name_row {
+.profil__info-name_row {
     position: relative;
 }
 
-.prof_info_name_text {
+.profil__name-text {
     font-weight: 500;
     font-size: 42px;
     line-height: 48px;
     color: #FFFFFF;
 }
 
-.prof_info_discrip_text {
+.profile__discription-text {
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
     color: #FFFFFF;
 }
 
-.prof_add_btn {
+.profile__add-btn {
     border: 2px solid #ffffff;
     background-color: black;
 }
 
-.prof_add_img {
+.profile__add-icon {
     padding: 14px 64px;
 }
 
-.profile_info_edit {
+.profile__info-edit {
     position: absolute;
     position: absolute;
     top: 16px;
     right: -40px;
 }
 
-.btn_profile_edit {
+.profile__edit-btn {
     background-color: #000000;
 }
 
-.btn_profile_edit:hover {
+.profile__edit-btn:hover {
     opacity: 0.6;
     cursor: pointer
 }
 
-.prof_add_btn:hover {
+.profile__add-btn:hover {
     opacity: 0.6;
     cursor: pointer
 }
 
 /*Секция Content*/
 
-.content {
+.cards {
     margin-bottom: 66px;
 }
 
-.content_wrap {
+.cards__content {
     display: flex;
     flex-wrap: wrap;
     gap: 17px;
     justify-content: center;
 }
 
-.card {
+.cards__card {
     width: 280px;
     height: 360px;
 }
 
-.card_img {
+.cards__photo {
     font-size: 0px;
 }
 
-.card__img {
+.cards__photo-img {
     width: 280px;
     height: 280px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
-.card_under_img {
+.cards__sub-photo {
     background-color: #FFFFFF;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -227,24 +238,24 @@ body {
     padding: 25px 15px;
 }
 
-.card_img_text {
+.cards__sub-text {
     font-weight: 900;
     font-size: 24px;
     line-height: 29px;
     color: #000000;
 }
 
-.card_img_like {
+.cards__like-btn {
     display: flex;
     align-items: center;
 }
 
-.btn_like_icon {
+.cards__btn-icon {
     border: none;
     background-color: #ffffff;
 }
 
-.btn_like_icon:hover {
+.cards__btn-icon:hover {
     opacity: 0.6;
     cursor: pointer
 }
@@ -260,7 +271,7 @@ body {
     margin-bottom: 60px;
 }
 
-.footer_marka_text {
+.footer__copyright-text {
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
@@ -268,20 +279,21 @@ body {
 }
 
 @media (max-width: 940px) {
-    .footer_marka_text {
+    .footer__copyright-text {
         font-size: 16px;
+    }
+}
+
+@media (max-width: 375px) {
+    .footer__copyright-text {
+        font-size: 14px;
+        line-height: 17px;
     }
 }
 
 /*Секция edit_overlay*/
 
-.edit_overlay {
-    /*top: 33px;
-    left: 404px;
-    opacity: 0.5;
-    transition: 0.5s;
-    background-color: #000000;*/
-
+.overlay {
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -296,14 +308,13 @@ body {
     justify-content: center;
 }
 
-.edit_overlay.is-hidden {
+.overlay.is-hidden {
     visibility: hidden;
     opacity: 0;
 }
 
-.profil_add_edit_overlay {
+.overlay__content {
     width: 430px;
-    /*height: 330px;*/
     background: #FFFFFF;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
@@ -315,13 +326,13 @@ body {
     position: relative;
 }
 
-.profile__form {
+.overlay__profile-forms {
     display: flex;
     flex-direction: column;
     /*width: 240px;*/
 }
 
-.edit_overlay_title {
+.overlay__title {
     font-weight: 900;
     font-size: 24px;
     line-height: 29px;
@@ -335,7 +346,7 @@ body {
     margin-bottom: 54px;
 }*/
 
-.edit_overlay_name {
+.overlay__form-name {
     margin-bottom: 30px;
     border-top: none;
     border-right: none;
@@ -345,14 +356,14 @@ body {
     padding-bottom: 10px;
 }
 
-.edit_overlay_name::placeholder {
+.overlay__form-name::placeholder {
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
     color: #000000;
 }
 
-.edit_overlay_description {
+.overlay__form-description {
     border-top: none;
     border-right: none;
     border-left: none;
@@ -361,41 +372,41 @@ body {
     padding-bottom: 10px;
 }
 
-.edit_overlay_description::placeholder {
+.overlay__form-description::placeholder {
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
     color: #000000;
 }
 
-.edit_overlay_description {
+.overlay__form-description {
     margin-bottom: 48px;
 }
 
-.edit_overlay_btn {
+.overlay__form-btn {
     padding: 15px;
     background-color: #000000;
     color: #ffffff;
     font-size: 18px;
 }
 
-.edit_overlay_btn:hover {
+.overlay__form-btn:hover {
     opacity: 0.6;
     cursor: pointer;
 }
 
-.edit_overlay_cancel {
+.overlay__cancel-icon {
     position: absolute;
     top: -40px;
     right: -33px;
 }
 
-.edit_overlay_cancel_btn {
+.overlay__cancel-btn {
     border: none;
     background-color: rgba(0, 0, 0, 0.0);
 }
 
-.edit_overlay_cancel_btn:hover {
+.overlay__cancel-btn:hover {
     opacity: 0.6;
     cursor: pointer
 }
@@ -407,17 +418,17 @@ body {
 
 
 @media (max-width: 640px) {
-    .profil_add_edit_overlay {
+    .overlay__content {
         width: auto;
         height: 322px;
     }
 
-    .edit_overlay_title {
+    .overlay__title {
         font-size: 18px;
         line-height: 22px;
     }
 
-    .edit_overlay_btn {
+    .overlay__form-btn {
         font-size: 14px;
         line-height: 17px;
     }
@@ -426,29 +437,14 @@ body {
         font-size: 30px;
     }
 
-    .edit_overlay_cancel {
+    .overlay__cancel-icon {
         top: -34px;
         right: -1px;
     }
 }
 
 @media (max-width: 375px) {
-    .profil_add_edit_overlay {
+    .overlay__content {
         padding: 34px 26px;
-    }
-
-    .prof_info_name_text {
-        font-size: 27px;
-        line-height: 33px;
-    }
-
-    .profile_info_edit {
-        top: 6px;
-        right: -37px;
-    }
-
-    .footer_marka_text {
-        font-size: 14px;
-        line-height: 17px;
     }
 }
