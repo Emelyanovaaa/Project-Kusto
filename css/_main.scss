@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: black;
+
+    /*position: relative;
+    overflow: hidden;
+    transition: 0.5s;*/
+}
+
+.wrap {
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+@media (max-width: 940px) {
+    .wrap {
+        max-width: 768px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 450px) {
+    .wrap {
+        max-width:320px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
