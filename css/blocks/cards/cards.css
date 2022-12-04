@@ -1,0 +1,24 @@
+
+@import url(cards__content/cards__content.css);
+
+@import url(cards__card/cards__card.css);
+
+@import url(cards__photo/cards__photo.css);
+
+@import url(cards__photo-img/cards__photo-img.css);
+
+@import url(cards__sub-photo/cards__sub-photo.css);
+
+@import url(cards__sub-text/cards__sub-text.css);
+
+@import url(cards__sub-text_hidden/cards__sub-text_hidden.css);
+
+@import url(cards__like-btn/cards__like-btn.css);
+
+@import url(cards__btn-icon/cards__btn-icon.css);
+
+@import url(fa-heart/fa-heart.css);
+
+.cards {
+  margin-bottom: 66px;
+}

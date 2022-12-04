@@ -1,0 +1,26 @@
+.popup__form-description {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    outline: none;
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 10px;
+}
+
+.popup__form-description::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+}
+
+.popup__form-description {
+    margin-bottom: 48px;
+}
+
+.popup__form-description {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+

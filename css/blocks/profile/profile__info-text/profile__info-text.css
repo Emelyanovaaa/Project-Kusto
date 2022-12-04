@@ -1,0 +1,6 @@
+.profile__info-text {
+  display: flex;
+  flex-direction: row;
+  gap: 17px;
+  justify-content: center;
+}

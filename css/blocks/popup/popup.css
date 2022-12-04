@@ -1,0 +1,35 @@
+
+@import url(popup.is-hidden/popup.is-hidden.css);
+
+@import url(popup__content/popup__content.css);
+
+@import url(popup__profile-forms/popup__profile-forms.css);
+
+@import url(popup__title/popup__title.css);
+
+@import url(popup__form-description/popup__form-description.css);
+
+@import url(popup__form-btn/popup__form-btn.css);
+
+@import url(popup__cancel-icon/popup__cancel-icon.css);
+
+@import url(popup__cancel-btn/popup__cancel-btn.css);
+
+@import url(fa-sharp/fa-sharp.css);
+
+@import url(popup__form-name/popup__form-name.css);
+
+.popup {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: visible;
+  opacity: 1;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

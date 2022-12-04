@@ -1,0 +1,12 @@
+.popup__cancel-icon {
+  position: absolute;
+  top: -40px;
+  right: -33px;
+}
+
+@media (max-width: 640px) {
+  .popup__cancel-icon {
+    top: -34px;
+    right: -1px;
+  }
+}

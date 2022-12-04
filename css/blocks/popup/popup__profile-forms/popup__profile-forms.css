@@ -1,0 +1,4 @@
+.popup__profile-forms {
+  display: flex;
+  flex-direction: column;
+}

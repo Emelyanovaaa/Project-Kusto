@@ -1,0 +1,9 @@
+.popup__cancel-btn {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+  
+.popup__cancel-btn:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}

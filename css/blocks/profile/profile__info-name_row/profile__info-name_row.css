@@ -1,0 +1,16 @@
+.profile__info-name_row {
+  position: relative;
+}
+
+@media (max-width: 940px) {
+  .profile__info-name_row {
+    position: relative;
+    margin-bottom: 14px;
+  }
+}
+
+@media (max-width: 450px) {
+  .profile__info-name_row {
+    margin-bottom: 0px;
+  }
+}

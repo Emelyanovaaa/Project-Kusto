@@ -1,0 +1,9 @@
+.cards__btn-icon {
+    border: none;
+    background-color: #ffffff;
+}
+
+.cards__btn-icon:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}

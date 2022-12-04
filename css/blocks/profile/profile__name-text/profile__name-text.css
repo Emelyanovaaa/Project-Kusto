@@ -1,0 +1,25 @@
+.profile__name-text {
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48px;
+  color: #ffffff;
+}
+
+@media (max-width: 940px) {
+  .profile__name-text {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 450px) {
+  .profile__name-text {
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 375px) {
+  .profile__name-text {
+    font-size: 27px;
+    line-height: 33px;
+  }
+}

@@ -1,0 +1,10 @@
+.fa-sharp {
+  color: #ffffff;
+  font-size: 40px;
+}
+
+@media (max-width: 640px) {
+  .fa-sharp {
+    font-size: 30px;
+  }
+}

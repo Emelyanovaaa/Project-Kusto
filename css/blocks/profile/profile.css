@@ -1,0 +1,32 @@
+
+@import url(profile__content/profile__content.css);
+
+@import url(profile__info/profile__info.css);
+
+@import url(profile__info-text/profile__info-text.css);
+
+@import url(profile__add-info/profile__add-info.css);
+
+@import url(profile__info-name_row/profile__info-name_row.css);
+
+@import url(profile__name-text/profile__name-text.css);
+
+@import url(profile__discription-text/profile__discription-text.css);
+
+@import url(profile__add-btn/profile__add-btn.css);
+
+@import url(profile__add-icon/profile__add-icon.css);
+
+@import url(profile__info-edit/profile__info-edit.css);
+
+@import url(profile__edit-btn/profile__edit-btn.css);
+
+@import url(profile__info-discription/profile__info-discription.css);
+
+@import url(profile__info-name/profile__info-name.css);
+
+@import url(profile__edit-icon/profile__edit-icon.css);
+
+.profile {
+  margin-bottom: 50px;
+}

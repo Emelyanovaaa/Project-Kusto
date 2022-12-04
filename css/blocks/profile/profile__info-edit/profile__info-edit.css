@@ -1,0 +1,26 @@
+.profile__info-edit {
+    position: absolute;
+    position: absolute;
+    top: 16px;
+    right: -40px;
+}
+
+@media (max-width: 940px) {
+  .profile__info-edit {
+    top: 14px;
+  }
+}
+
+@media (max-width: 450px) {
+  .profile__info-edit {
+    top: 15px;
+  }
+}
+
+@media (max-width: 375px) {
+  .profile__info-edit {
+    top: 6px;
+    right: -37px;
+  }
+}
+

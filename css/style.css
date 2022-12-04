@@ -1,17 +1,35 @@
-@charset "UTF-8";
+
+/*Section Header*/
+@import url(./blocks/header/header.css);
+
+/*Section Profile*/
+@import url(./blocks/profile/profile.css);
+
+/*Section Cards*/
+@import url(./blocks/cards/cards.css);
+
+/*Section Footer*/
+@import url(./blocks/footer/footer.css);
+
+/*Section Popup*/
+@import url(./blocks/popup/popup.css);
+
+
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: black;
 }
 
 .wrap {
   max-width: 880px;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @media (max-width: 940px) {
@@ -21,9 +39,10 @@ body {
     padding-right: 20px;
   }
 }
+
 @media (max-width: 450px) {
   .wrap {
-    max-width: 320px;
+    max-width:320px;
     padding-left: 20px;
     padding-right: 20px;
   }

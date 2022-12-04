@@ -1,0 +1,6 @@
+@media (max-width: 940px) {
+  .profile__info-discription {
+    display: flex;
+    justify-content: center;
+  }
+}

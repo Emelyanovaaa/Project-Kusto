@@ -1,0 +1,5 @@
+.cards__sub-text_hidden {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
