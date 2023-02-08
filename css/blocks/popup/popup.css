@@ -19,6 +19,14 @@
 
 @import url(popup__form-name/popup__form-name.css);
 
+@import url(popup__photo-content/popup__photo-content.css);
+
+@import url(popup__photo-img/popup__photo-img.css);
+
+@import url(popup__cancel-photo/popup__cancel-photo.css);
+
+@import url(popup__photo-subtext/popup__photo-subtext.css);
+
 .popup {
   width: 100%;
   height: 100vh;
@@ -32,4 +40,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.3s;
 }

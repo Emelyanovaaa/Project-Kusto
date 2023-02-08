@@ -5,4 +5,5 @@
 .profile__edit-btn:hover {
     opacity: 0.6;
     cursor: pointer;
+    transition: 0.3s;
 }

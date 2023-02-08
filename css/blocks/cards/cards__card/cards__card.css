@@ -1,4 +1,9 @@
 .cards__card {
     width: 280px;
     height: 360px;
+    position: relative;
+  }
+
+  .is-remove {
+    display: none;
   }

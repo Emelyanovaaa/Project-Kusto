@@ -1,6 +1,8 @@
 .popup.is-hidden {
-  /*visibility: hidden;
-  opacity: 0;*/
+  visibility: hidden;
+  opacity: 0;
 
-  display: none;
+  transition: 0.3s;
+
+  /*display: none;*/
 }

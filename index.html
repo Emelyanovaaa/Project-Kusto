@@ -51,14 +51,14 @@
 
     <section class="cards wrap">
             <div class="cards__content">
-                <div class="cards__card">
+                <!--<div class="cards__card">
                     <div class="cards__photo">
                         <img class="cards__photo-img" src="img/card_1.jpg" alt="photo">
                     </div>
                     <div class="cards__sub-photo">
                         <div class="cards__sub-text">Карачаевск</div>
                         <div class="cards__like-btn"><button class="cards__btn-icon"><i
-                                    class="fa-regular fa-heart"></i></button></div>
+                                    class="fa-regular fa-heart "></i></button></div>
                     </div>
                 </div>
                 <div class="cards__card">
@@ -110,7 +110,7 @@
                         <div class="cards__like-btn"><button class="cards__btn-icon"><i
                                     class="fa-regular fa-heart"></i></button></div>
                     </div>
-                </div>
+                </div>-->
             </div>
     </section>
 
@@ -131,6 +131,37 @@
             </form>
             <div class="popup__cancel-icon">
                 <button class="popup__cancel-btn">
+                    <i class="fa-sharp fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="popup popup__addCard is-hidden">
+        <div class="popup__content popup__contentAdd">
+            <p class="popup__title">Новое место</p>
+            <form class="popup__profile-forms">
+                <input type="name" class="popup__form-name popup__addForm-name" placeholder="Название">
+                <input type="text" class="popup__form-description popup__addForm-link" minlength="2"
+                    placeholder="Ссылка на картинку">
+                <input type="submit" class="popup__form-btn popup__addForm-btn" value="Сохранить">
+            </form>
+            <div class="popup__cancel-icon">
+                <button class="popup__cancel-btn addCard__cancel-btn">
+                    <i class="fa-sharp fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+   <section class="popup popup__photo is-hidden">
+        <div class="popup__photo-content">
+            <figure>
+                <img class="popup__photo-img" src="/img/cards/Bogota.jpg" alt="photo">
+                <figcaption class="popup__photo-subtext"></figcaption>
+            </figure>
+            <div class="popup__cancel-icon">
+                <button class="popup__cancel-photo">
                     <i class="fa-sharp fa-solid fa-xmark"></i>
                 </button>
             </div>

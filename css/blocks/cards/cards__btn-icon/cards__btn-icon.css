@@ -1,9 +1,18 @@
 .cards__btn-icon {
     border: none;
     background-color: #ffffff;
+    background-image: url(/img/like_icon_desable.svg);
+    width: 22px;
+    height: 19px;
+}
+
+.cards__btn-icon.is-active {
+    background-image: url(/img/like_icon_active.png);
+
 }
 
 .cards__btn-icon:hover {
     opacity: 0.6;
     cursor: pointer;
+    transition: 0.3s;
 }

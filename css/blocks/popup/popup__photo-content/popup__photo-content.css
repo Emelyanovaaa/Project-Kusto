@@ -1,0 +1,7 @@
+.popup__photo-content {
+    box-shadow: 0px 0px 25px rgb(0 0 0 / 15%);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+};
