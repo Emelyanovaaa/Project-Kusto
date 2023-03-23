@@ -30,7 +30,7 @@
                             <div class="profile__info-name_row">
                                 <p class="profile__name-text">Жак-Ив Кусто</p>
                                 <div class="profile__info-edit">
-                                    <button class="profile__edit-btn">
+                                    <button class="popup__open_button profile__edit-btn">
                                         <img src="/img/profile_edit_icon.svg" alt="edit" class="profile__edit-icon">
                                     </button>
                                 </div>
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="profile__add-info">
+                <div class="popup__open_button profile__add-info">
                     <button class="profile__add-btn">
                         <img class="profile__add-icon" src="/img/add_plus.png" alt="add">
                     </button>
@@ -124,10 +124,14 @@
         <div class="popup__content">
             <p class="popup__title">Редактировать профиль</p>
             <form class="popup__profile-forms">
-                <input type="name" class="popup__form-name" placeholder="Жак-Ив Кусто">
-                <input type="text" class="popup__form-description" maxlength="25" minlength="2"
-                    placeholder="Oceanographer">
-                <input type="submit" class="popup__form-btn" value="Сохранить">
+                <fieldset class="popup__fieldset form__set">
+                    <input type="name" class="popup__form popup__form-name" id="name-form" placeholder="Жак-Ив Кусто" minlength="2" maxlength="40">
+                    <span class="popup__form-error name-form-error"></span>
+                    <input type="text" class="popup__form popup__form-description" id="text-form" maxlength="200" minlength="2"
+                        placeholder="Oceanographer">
+                    <span class="popup__form-error text-form-error"></span>
+                    <input type="submit" class="popup__submit popup__form-btn" value="Сохранить">
+                </fieldset>
             </form>
             <div class="popup__cancel-icon">
                 <button class="popup__cancel-btn">
@@ -141,10 +145,14 @@
         <div class="popup__content popup__contentAdd">
             <p class="popup__title">Новое место</p>
             <form class="popup__profile-forms">
-                <input type="name" class="popup__form-name popup__addForm-name" placeholder="Название">
-                <input type="text" class="popup__form-description popup__addForm-link" minlength="2"
+                <fieldset class="popup__fieldset form__set">
+                    <input type="name" class="popup__form popup__form-name popup__addForm-name" id="addForm-name"   placeholder="Название" minlength="2" maxlength="30">
+                    <span class="popup__form-error addForm-name-error"></span>
+                    <input type="email" class="popup__form popup__form-description popup__addForm-link" id="addForm-link"
                     placeholder="Ссылка на картинку">
-                <input type="submit" class="popup__form-btn popup__addForm-btn" value="Сохранить">
+                    <span class="popup__form-error addForm-link-error"></span>
+                    <input type="submit" class="popup__submit popup__form-btn popup__addForm-btn" value="Сохранить">
+                </fieldset>
             </form>
             <div class="popup__cancel-icon">
                 <button class="popup__cancel-btn addCard__cancel-btn">
@@ -156,7 +164,7 @@
 
    <section class="popup popup__photo is-hidden">
         <div class="popup__photo-content">
-            <figure>
+            <figure class="popup__img">
                 <img class="popup__photo-img" src="/img/cards/Bogota.jpg" alt="photo">
                 <figcaption class="popup__photo-subtext"></figcaption>
             </figure>
@@ -169,6 +177,7 @@
     </section>
 
     <script src="./js/script.js"></script>
+    <script src="./js/validate.js"></script>
 </body>
 
 </html>

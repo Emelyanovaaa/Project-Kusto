@@ -27,6 +27,12 @@
 
 @import url(popup__photo-subtext/popup__photo-subtext.css);
 
+@import url(popup__button_inactive/popup__button_inactive.css);
+
+@import url(popup__error_visible/popup__error_visible.css);
+
+@import url(popup__fieldset/popup__fieldset.css);
+
 .popup {
   width: 100%;
   height: 100vh;

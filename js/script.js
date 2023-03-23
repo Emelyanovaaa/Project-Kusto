@@ -1,9 +1,11 @@
 
 //const profile = document.querySelector('.profile');
 const editButton = document.querySelector('.profile__edit-btn');
+const popups = document.querySelector('.popup');
 
-const popup = document.querySelector('.popup');
+//const popup = document.querySelector('.popup');
 const popupClosed = document.querySelector('.popup__cancel-btn');
+const popupContent = document.querySelector('.popup__content');
 
 const formElement = document.querySelector('.popup__profile-forms');
 const inputName = document.querySelector('.popup__form-name');
@@ -32,14 +34,17 @@ const cancelPhoto = document.querySelector('.popup__cancel-photo');
 const popupPhotoSubText = document.querySelector('.popup__photo-subtext');
 
 function openPopup() {
-    popup.classList.remove('is-hidden');
+    popups.classList.remove('is-hidden');
+    document.addEventListener('keydown', closePopupEsc);
 };
 
 function closePopup() {
-    popup.classList.add('is-hidden');
+    popups.classList.add('is-hidden');
     inputName.value = inputName.getAttribute('placeholder');
     inputJob.value = inputJob.getAttribute('placeholder');
+    document.removeEventListener('keydown', closePopupEsc);
 };
+
 
 editButton.addEventListener('click', openPopup);
 popupClosed.addEventListener('click', closePopup);
@@ -140,23 +145,13 @@ inputSubmit.addEventListener('click', handleFormSubmit);
         card.append(cardPhoto, cardSub, cancelCard);
         cardsContent.append(card);
     };
-
-    function open__addCard() {
-        addCard.classList.remove('is-hidden');
-    };
     
-    function close__addCard() {
-        addCard.classList.add('is-hidden');
-        addCardName.value = addCardName.getAttribute('placeholder');
-        addCardLink.value = addCardLink.getAttribute('placeholder');
-    };
-    
-    addButton.addEventListener('click', open__addCard);
-    addCardClose.addEventListener('click', close__addCard);
+    addButton.addEventListener('click', openPopup);
+    addCardClose.addEventListener('click', closePopup);
 
 
     function addCardFormSubmit (event) {
-        event.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+        event.preventDefault();
     
        let cardName = addCardName.value;
        let cardLink = addCardLink.value;
@@ -204,17 +199,37 @@ inputSubmit.addEventListener('click', handleFormSubmit);
 
         let popupImg = document.querySelector('.popup__photo');
         popupImg.classList.remove('is-hidden');
+        document.addEventListener('keydown', closePopupEscImg);
     });
 
 
 
-   function closeImg(){
+    function closeImg(){
         popupPhoto.classList.add('is-hidden');
+        document.removeEventListener('keydown', closePopupEsc);
     };
     
     cancelPhoto.addEventListener('click', closeImg);
 
 
+    document.addEventListener('click', (evt) => {
+        if (evt.target.classList.contains('popup')){
+            closePopup();
+            closeImg();
+        }
+    });
+
+    function closePopupEsc (evt) {
+        if (evt.key === 'Escape') {
+            closePopup();
+        }
+    };
+
+    function closePopupEscImg (evt) {
+        if (evt.key === 'Escape') {
+            closeImg();
+        }
+    };
 
 
 
