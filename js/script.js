@@ -1,9 +1,8 @@
 
 //const profile = document.querySelector('.profile');
 const editButton = document.querySelector('.profile__edit-btn');
-const popups = document.querySelector('.popup');
+const popup = document.querySelector('.popup');
 
-//const popup = document.querySelector('.popup');
 const popupClosed = document.querySelector('.popup__cancel-btn');
 const popupContent = document.querySelector('.popup__content');
 
@@ -33,26 +32,38 @@ const cancelPhoto = document.querySelector('.popup__cancel-photo');
 
 const popupPhotoSubText = document.querySelector('.popup__photo-subtext');
 
-function openPopup() {
-    popups.classList.remove('is-hidden');
-    document.addEventListener('keydown', closePopupEsc);
+function openPopup(currentPopup) {
+    currentPopup.classList.remove('is-hidden');
+    document.addEventListener('keydown', (evt) => {
+        if (evt.key === 'Escape') {
+            closePopup(currentPopup);
+        }
+    });
 };
 
-function closePopup() {
-    popups.classList.add('is-hidden');
-    inputName.value = inputName.getAttribute('placeholder');
-    inputJob.value = inputJob.getAttribute('placeholder');
-    document.removeEventListener('keydown', closePopupEsc);
+function closePopup(currentPopup) {
+    console.log(currentPopup);
+    currentPopup.classList.add('is-hidden');
+    console.log(Array.from(currentPopup.getElementsByTagName('input')));
+    Array.from(currentPopup.getElementsByTagName('input')).forEach((element) => element.value = element.getAttribute('placeholder'));
+    document.removeEventListener('keydown', (evt) => {
+        if (evt.key === 'Escape') {
+            closePopup(currentPopup);
+        }
+    });
 };
 
 
-editButton.addEventListener('click', openPopup);
-popupClosed.addEventListener('click', closePopup);
+editButton.addEventListener('click', () => openPopup(popup));
+popupClosed.addEventListener('click', (evt) => closePopup(evt.target.closest('.popup')));
+
+addButton.addEventListener('click', () => openPopup(addCard)); //переименовать
+addCardClose.addEventListener('click', (evt) => closePopup(evt.target.closest('.popup')));
 
 
 function handleFormSubmit (event) {
-    event.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-    // Получите значение полей jobInput и nameInput из свойства value
+    event.preventDefault();
+    
     let inputNameValue = inputName.value;
     let inputJobValue = inputJob.value;
 
@@ -146,8 +157,7 @@ inputSubmit.addEventListener('click', handleFormSubmit);
         cardsContent.append(card);
     };
     
-    addButton.addEventListener('click', openPopup);
-    addCardClose.addEventListener('click', closePopup);
+
 
 
     function addCardFormSubmit (event) {
@@ -199,7 +209,7 @@ inputSubmit.addEventListener('click', handleFormSubmit);
 
         let popupImg = document.querySelector('.popup__photo');
         popupImg.classList.remove('is-hidden');
-        document.addEventListener('keydown', closePopupEscImg);
+        document.addEventListener('keydown', closeImgPopupEsc);
     });
 
 
@@ -214,18 +224,18 @@ inputSubmit.addEventListener('click', handleFormSubmit);
 
     document.addEventListener('click', (evt) => {
         if (evt.target.classList.contains('popup')){
-            closePopup();
+            closePopup(evt.target.closest('.popup'));
             closeImg();
         }
     });
 
-    function closePopupEsc (evt) {
+   /* function closePopupEsc(evt) {
         if (evt.key === 'Escape') {
             closePopup();
         }
-    };
+    };*/
 
-    function closePopupEscImg (evt) {
+    function closeImgPopupEsc (evt) {
         if (evt.key === 'Escape') {
             closeImg();
         }
