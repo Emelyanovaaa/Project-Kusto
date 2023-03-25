@@ -2,6 +2,7 @@
 //const profile = document.querySelector('.profile');
 const editButton = document.querySelector('.profile__edit-btn');
 const popup = document.querySelector('.popup');
+const popupForm = document.querySelector('.popup__form');
 
 const popupClosed = document.querySelector('.popup__cancel-btn');
 const popupContent = document.querySelector('.popup__content');
@@ -42,10 +43,9 @@ function openPopup(currentPopup) {
 };
 
 function closePopup(currentPopup) {
-    console.log(currentPopup);
     currentPopup.classList.add('is-hidden');
-    console.log(Array.from(currentPopup.getElementsByTagName('input')));
-    Array.from(currentPopup.getElementsByTagName('input')).forEach((element) => element.value = element.getAttribute('placeholder'));
+    /*Array.from(currentPopup.getElementsByTagName('input')).forEach((element) => element.value = element.getAttribute('placeholder'));*/
+    currentPopup.querySelector('.popup__profile-forms').reset(); //заместо того что выше заккоментирвоанное написала вот это
     document.removeEventListener('keydown', (evt) => {
         if (evt.key === 'Escape') {
             closePopup(currentPopup);
@@ -216,7 +216,7 @@ inputSubmit.addEventListener('click', handleFormSubmit);
 
     function closeImg(){
         popupPhoto.classList.add('is-hidden');
-        document.removeEventListener('keydown', closePopupEsc);
+        document.removeEventListener('keydown', closeImgPopupEsc);
     };
     
     cancelPhoto.addEventListener('click', closeImg);
