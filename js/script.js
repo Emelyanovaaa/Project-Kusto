@@ -1,8 +1,5 @@
-
-//const profile = document.querySelector('.profile');
 const editButton = document.querySelector('.profile__edit-btn');
-const popup = document.querySelector('.popup');
-const popupForm = document.querySelector('.popup__form');
+const profilePopup = document.querySelector('.popup-profile');
 
 const popupClosed = document.querySelector('.popup__cancel-btn');
 const popupContent = document.querySelector('.popup__content');
@@ -33,6 +30,7 @@ const cancelPhoto = document.querySelector('.popup__cancel-photo');
 
 const popupPhotoSubText = document.querySelector('.popup__photo-subtext');
 
+
 function openPopup(currentPopup) {
     currentPopup.classList.remove('is-hidden');
     document.addEventListener('keydown', (evt) => {
@@ -44,7 +42,6 @@ function openPopup(currentPopup) {
 
 function closePopup(currentPopup) {
     currentPopup.classList.add('is-hidden');
-    /*Array.from(currentPopup.getElementsByTagName('input')).forEach((element) => element.value = element.getAttribute('placeholder'));*/
     currentPopup.querySelector('.popup__profile-forms').reset(); //заместо того что выше заккоментирвоанное написала вот это
     document.removeEventListener('keydown', (evt) => {
         if (evt.key === 'Escape') {
@@ -54,192 +51,184 @@ function closePopup(currentPopup) {
 };
 
 
-editButton.addEventListener('click', () => openPopup(popup));
+editButton.addEventListener('click', () => openPopup(profilePopup));
 popupClosed.addEventListener('click', (evt) => closePopup(evt.target.closest('.popup')));
 
 addButton.addEventListener('click', () => openPopup(addCard)); //переименовать
 addCardClose.addEventListener('click', (evt) => closePopup(evt.target.closest('.popup')));
 
 
-function handleFormSubmit (event) {
+function handleFormSubmit(event) {  // переименуй название функции, что бы было понятно что именно она обрабатывает
     event.preventDefault();
-    
     let inputNameValue = inputName.value;
     let inputJobValue = inputJob.value;
 
     nameProfile.textContent = inputNameValue;
     jobProfile.textContent = inputJobValue;
 
-    closePopup();
-}
+    closePopup(event.target.closest('.popup'));
+};
 
-// Прикрепляем обработчик к форме:
-// он будет следить за событием “submit” - «отправка»
 inputSubmit.addEventListener('click', handleFormSubmit);
 
-    const initialCards = [
-        {
-            name: 'Alaska',
-            link: 'img/cards/Alaska.jpg'
-        },
-        {
-            name: 'Bogota',
-            link: 'img/cards/Bogota.jpg'
-        },
-        {
-            name: 'Egipt',
-            link: 'img/cards/Egipt.jpg'
-        },
-        {
-            name: 'France',
-            link: 'img/cards/France.jpg'
-        },
-        {
-            name: 'India',
-            link: 'img/cards/India.jpg'
-        },
-        {
-            name: 'London',
-            link: 'img/cards/London.jpg'
-        },
-    ];
+const initialCards = [
+    {
+        name: 'Alaska',
+        link: 'img/cards/Alaska.jpg'
+    },
+    {
+        name: 'Bogota',
+        link: 'img/cards/Bogota.jpg'
+    },
+    {
+        name: 'Egipt',
+        link: 'img/cards/Egipt.jpg'
+    },
+    {
+        name: 'France',
+        link: 'img/cards/France.jpg'
+    },
+    {
+        name: 'India',
+        link: 'img/cards/India.jpg'
+    },
+    {
+        name: 'London',
+        link: 'img/cards/London.jpg'
+    },
+];
 
-    for(let i = 0; i < initialCards.length; i++) {
-        const name = initialCards[i].name;
-        const link = initialCards[i].link;
+for (let i = 0; i < initialCards.length; i++) {
+    const name = initialCards[i].name;
+    const link = initialCards[i].link;
 
-        createCard(name, link);
-    };
+    createCard(name, link);
+};
 
-    function createCard(name, link) {
+function createCard(name, link) {
 
-        const card = document.createElement('div');
-        card.classList.add('cards__card');
+    const card = document.createElement('div');
+    card.classList.add('cards__card');
 
-        const cardPhoto = document.createElement('div');
-        cardPhoto.classList.add('cards__photo');
+    const cardPhoto = document.createElement('div');
+    cardPhoto.classList.add('cards__photo');
 
-        const cardSub = document.createElement('div');
-        cardSub.classList.add('cards__sub-photo');
+    const cardSub = document.createElement('div');
+    cardSub.classList.add('cards__sub-photo');
 
-        const photo = document.createElement('img');
-        photo.classList.add('cards__photo-img');
-        photo.setAttribute('src', link);
+    const photo = document.createElement('img');
+    console.log(photo);
+    photo.classList.add('cards__photo-img');
+    photo.setAttribute('src', link);
 
-        const cancelCard = document.createElement('div');
-        cancelCard.classList.add('cards__cancel');
+    const cancelCard = document.createElement('div');
+    cancelCard.classList.add('cards__cancel');
 
-        const cancelButton = document.createElement('button');
-        cancelButton.classList.add('cards__cancel-button');
+    const cancelButton = document.createElement('button');
+    cancelButton.classList.add('cards__cancel-button');
 
-        const cancelIcon = document.createElement('img');
-        cancelIcon.classList.add('cards__cancel-icon');
-        cancelIcon.setAttribute('src', '/img/card_cancel_button.png');
+    const cancelIcon = document.createElement('img');
+    cancelIcon.classList.add('cards__cancel-icon');
+    cancelIcon.setAttribute('src', '/img/card_cancel_button.png');
 
-        const subName = document.createElement('div');
-        subName.classList.add('cards__sub-text');
-        subName.textContent = name;
+    const subName = document.createElement('div');
+    subName.classList.add('cards__sub-text');
+    subName.textContent = name;
 
-        const likeBtn = document.createElement('div');
-        likeBtn.classList.add('cards__like-btn');
+    const likeBtn = document.createElement('div');
+    likeBtn.classList.add('cards__like-btn');
 
-        const likeButton = document.createElement('button');
-        likeButton.classList.add('cards__btn-icon');
-
-        
-        cardPhoto.append(photo);
-        cancelCard.append(cancelButton);
-        cancelButton.append(cancelIcon);
-        likeBtn.append(likeButton);
-        /*likeButton.append(btnIcon);*/
-        cardSub.append(subName, likeBtn);
-        card.append(cardPhoto, cardSub, cancelCard);
-        cardsContent.append(card);
-    };
-    
+    const likeButton = document.createElement('button');
+    likeButton.classList.add('cards__btn-icon');
 
 
-
-    function addCardFormSubmit (event) {
-        event.preventDefault();
-    
-       let cardName = addCardName.value;
-       let cardLink = addCardLink.value;
-
-        createCard(cardName, cardLink);
-        close__addCard();
-    };
-    
-    addCardSubmit.addEventListener('click', addCardFormSubmit);
-
-
-    cardsContent.addEventListener('click', function(event){
-        let likeTarget = event.target;
-
-        if(likeTarget.classList.contains('is-active')){
-            likeTarget.classList.remove('is-active');
-            return;
-        }
-
-        likeTarget.classList.add('is-active');
-    });
-
-
-    cardsContent.addEventListener('click', function(event){
-        const btn = event.target.closest('.cards__cancel-button');
-        if(!btn){
-            return;
-        }
-        btn.closest('.cards__card').remove();
-    });
-
-    cardsContent.addEventListener('click', function(event){
-        let img = event.target.closest('.cards__photo-img');
-        if(!img){
-            return;
-        }
-
-        let cardLinkValue = img.getAttribute('src');
-        popupPhotoImg.setAttribute('src', cardLinkValue);
-
-        let card = img.closest('.cards__card');
-        let cardSubName = card.querySelector('.cards__sub-text');
-        let nameImg = cardSubName.textContent;
-        popupPhotoSubText.textContent = nameImg;
-
-        let popupImg = document.querySelector('.popup__photo');
-        popupImg.classList.remove('is-hidden');
-        document.addEventListener('keydown', closeImgPopupEsc);
-    });
+    cardPhoto.append(photo);
+    cancelCard.append(cancelButton);
+    cancelButton.append(cancelIcon);
+    likeBtn.append(likeButton);
+    /*likeButton.append(btnIcon);*/
+    cardSub.append(subName, likeBtn);
+    card.append(cardPhoto, cardSub, cancelCard);
+    cardsContent.append(card);
+};
 
 
 
-    function closeImg(){
-        popupPhoto.classList.add('is-hidden');
-        document.removeEventListener('keydown', closeImgPopupEsc);
-    };
-    
-    cancelPhoto.addEventListener('click', closeImg);
+
+function addCardFormSubmit(event) {
+    event.preventDefault();
+    let cardName = addCardName.value;
+    let cardLink = addCardLink.value;
+
+    createCard(cardName, cardLink);
+
+    closePopup(event.target.closest('.popup'));
+};
+
+addCardSubmit.addEventListener('click', addCardFormSubmit);
 
 
-    document.addEventListener('click', (evt) => {
-        if (evt.target.classList.contains('popup')){
-            closePopup(evt.target.closest('.popup'));
-            closeImg();
-        }
-    });
+cardsContent.addEventListener('click', function (event) {
+    let likeTarget = event.target;
 
-   /* function closePopupEsc(evt) {
-        if (evt.key === 'Escape') {
-            closePopup();
-        }
-    };*/
+    if (likeTarget.classList.contains('is-active')) {
+        likeTarget.classList.remove('is-active');
+        return;
+    }
 
-    function closeImgPopupEsc (evt) {
-        if (evt.key === 'Escape') {
-            closeImg();
-        }
-    };
+    likeTarget.classList.add('is-active');
+});
+
+
+cardsContent.addEventListener('click', function (event) {
+    const btn = event.target.closest('.cards__cancel-button');
+    if (!btn) {
+        return;
+    }
+    btn.closest('.cards__card').remove();
+});
+
+cardsContent.addEventListener('click', function (event) {
+    let img = event.target.closest('.cards__photo-img');
+    if (!img) {
+        return;
+    }
+
+    let cardLinkValue = img.getAttribute('src');
+    popupPhotoImg.setAttribute('src', cardLinkValue);
+
+    let card = img.closest('.cards__card');
+    let cardSubName = card.querySelector('.cards__sub-text');
+    let nameImg = cardSubName.textContent;
+    popupPhotoSubText.textContent = nameImg;
+
+    let popupImg = document.querySelector('.popup__photo');
+    popupImg.classList.remove('is-hidden');
+    document.addEventListener('keydown', closeImgPopupEsc);
+});
+
+
+
+function closeImg() {
+    popupPhoto.classList.add('is-hidden');
+    document.removeEventListener('keydown', closeImgPopupEsc);
+};
+
+cancelPhoto.addEventListener('click', closeImg);
+
+
+document.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains('popup')) {
+        closePopup(evt.target.closest('.popup'));
+        closeImg();
+    }
+});
+
+function closeImgPopupEsc(evt) {
+    if (evt.key === 'Escape') {
+        closeImg();
+    }
+};
 
 
 
