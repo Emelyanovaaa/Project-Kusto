@@ -58,7 +58,7 @@ addButton.addEventListener('click', () => openPopup(addCard));
 addCardClose.addEventListener('click', (evt) => closePopup(evt.target.closest('.popup')));
 
 
-function editProfileSubmit(event) {  // переименуй название функции, что бы было понятно что именно она обрабатывает
+function editProfileSubmit(event) {  
     event.preventDefault();
     let inputNameValue = inputName.value;
     let inputJobValue = inputJob.value;
