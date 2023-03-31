@@ -8,7 +8,7 @@ const formElement = document.querySelector('.popup__profile-forms');
 const inputName = document.querySelector('.popup__form-name');
 const inputJob = document.querySelector('.popup__form-description');
 
-const inputSubmit = document.querySelector('.popup__form-btn');
+const editProfileSubmitBtn = document.querySelector('.popup__form-btn');
 const nameProfile = document.querySelector('.profile__name-text');
 const jobProfile = document.querySelector('.profile__discription-text');
 
@@ -18,7 +18,7 @@ const addButton = document.querySelector('.profile__add-btn');
 const addCard = document.querySelector('.popup__addCard');
 const addCardClose = document.querySelector('.addCard__cancel-btn');
 
-const addCardSubmit = document.querySelector('.popup__addForm-btn');
+const addCardSubmitBtn = document.querySelector('.popup__addForm-btn');
 const addCardName = document.querySelector('.popup__addForm-name');
 const addCardLink = document.querySelector('.popup__addForm-link');
 const cardName = document.querySelector('.cards__sub-text');
@@ -42,7 +42,7 @@ function openPopup(currentPopup) {
 
 function closePopup(currentPopup) {
     currentPopup.classList.add('is-hidden');
-    currentPopup.querySelector('.popup__profile-forms').reset(); //заместо того что выше заккоментирвоанное написала вот это
+    currentPopup.querySelector('.popup__profile-forms').reset();
     document.removeEventListener('keydown', (evt) => {
         if (evt.key === 'Escape') {
             closePopup(currentPopup);
@@ -54,11 +54,11 @@ function closePopup(currentPopup) {
 editButton.addEventListener('click', () => openPopup(profilePopup));
 popupClosed.addEventListener('click', (evt) => closePopup(evt.target.closest('.popup')));
 
-addButton.addEventListener('click', () => openPopup(addCard)); //переименовать
+addButton.addEventListener('click', () => openPopup(addCard));
 addCardClose.addEventListener('click', (evt) => closePopup(evt.target.closest('.popup')));
 
 
-function handleFormSubmit(event) {  // переименуй название функции, что бы было понятно что именно она обрабатывает
+function editProfileSubmit(event) {  // переименуй название функции, что бы было понятно что именно она обрабатывает
     event.preventDefault();
     let inputNameValue = inputName.value;
     let inputJobValue = inputJob.value;
@@ -69,7 +69,7 @@ function handleFormSubmit(event) {  // переименуй название ф�
     closePopup(event.target.closest('.popup'));
 };
 
-inputSubmit.addEventListener('click', handleFormSubmit);
+editProfileSubmitBtn.addEventListener('click', editProfileSubmit);
 
 const initialCards = [
     {
@@ -146,7 +146,6 @@ function createCard(name, link) {
     cancelCard.append(cancelButton);
     cancelButton.append(cancelIcon);
     likeBtn.append(likeButton);
-    /*likeButton.append(btnIcon);*/
     cardSub.append(subName, likeBtn);
     card.append(cardPhoto, cardSub, cancelCard);
     cardsContent.append(card);
@@ -165,7 +164,7 @@ function addCardFormSubmit(event) {
     closePopup(event.target.closest('.popup'));
 };
 
-addCardSubmit.addEventListener('click', addCardFormSubmit);
+addCardSubmitBtn.addEventListener('click', addCardFormSubmit);
 
 
 cardsContent.addEventListener('click', function (event) {
