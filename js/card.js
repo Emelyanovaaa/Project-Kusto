@@ -1,4 +1,4 @@
-import {popupPhotoImg, popupPhotoSubText, closeImgPopupEsc} from './script.js';
+import {popupPhotoImg, popupPhotoSubText, closePopupImgEsc} from './script.js';
 
 export default class Card {
     static _template = document.querySelector('#templateCard');
@@ -17,26 +17,26 @@ export default class Card {
     createCard (){
 
         this._cardElement = Card._template.content.cloneNode(true);
+
         this._cardPhotoImg = this._cardElement.querySelector('.cards__photo-img');
         this._cardPhotoImg.setAttribute('src', this._link);
-        this._cardText = this._cardElement.querySelector('.cards__sub-text');
-        this._cardText.textContent = this._name;
+        this._cardPhotoImg.addEventListener('click', this._openPopupImg);
 
-        this._cardLikeButton = this._cardElement.querySelector('.cards__btn-icon');
-        this._cardLikeButton.addEventListener('click', this._like);
+        this._cardSubText = this._cardElement.querySelector('.cards__sub-text');
+        this._cardSubText.textContent = this._name;
 
-        this._cardRemoveButton = this._cardElement.querySelector('.cards__cancel-button');
-        this._cardRemoveButton.addEventListener('click', this._removeCard);
+        this._cardLikeBtn = this._cardElement.querySelector('.cards__btn-icon');
+        this._cardLikeBtn.addEventListener('click', this._likeCard);
 
-        this._cardImg = this._cardElement.querySelector('.cards__photo-img');
-        this._cardImg.addEventListener('click', this._openImg);
+        this._removeCardBtn = this._cardElement.querySelector('.cards__cancel-button');
+        this._removeCardBtn.addEventListener('click', this._removeCard);
 
         this._templateSelector.append(this._cardElement);
         return  this._templateSelector;
 
     }
 
-    _like(event){
+    _likeCard(event){
         let likeTarget = event.target;
     
         if (likeTarget.classList.contains('is-active')) {
@@ -55,7 +55,7 @@ export default class Card {
         btn.closest('.cards__card').remove();
     }
 
-    _openImg (event) {
+    _openPopupImg (event) {
         let img = event.target.closest('.cards__photo-img');
         if (!img) {
             return;
@@ -65,13 +65,13 @@ export default class Card {
         popupPhotoImg.setAttribute('src', cardLinkValue);
     
         let card = img.closest('.cards__card');
-        let cardSubName = card.querySelector('.cards__sub-text');
-        let nameImg = cardSubName.textContent;
+        let cardSubText = card.querySelector('.cards__sub-text');
+        let nameImg = cardSubText.textContent;
         popupPhotoSubText.textContent = nameImg;
     
         let popupImg = document.querySelector('.popup__photo');
         popupImg.classList.remove('is-hidden');
-        document.addEventListener('keydown', closeImgPopupEsc);
+        document.addEventListener('keydown', closePopupImgEsc);
     };
     
 
