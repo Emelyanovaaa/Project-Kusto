@@ -1,9 +1,9 @@
 .popup__cancel-photo {
     border: none;
-    background-color: rgba(0, 0, 0, 0);
-};
+    background-color: #000000;
+}
 
 .popup__cancel-photo:hover {
     opacity: 0.6;
     cursor: pointer;
-};
+}

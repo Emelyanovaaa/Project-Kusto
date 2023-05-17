@@ -1,5 +1,6 @@
 .profile__edit-btn {
     background-color: #000000;
+    border: none;
 }
 
 .profile__edit-btn:hover {
